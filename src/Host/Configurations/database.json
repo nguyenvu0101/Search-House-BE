@@ -1,0 +1,6 @@
+{
+  "DatabaseSettings": {
+    "DBProvider": "mssql",
+    "ConnectionString": "Data Source=NGUYENVU113\\SQLEXPRESS02;Initial Catalog=RentHome_context;Integrated Security=True;MultipleActiveResultSets=True;TrustServerCertificate=True"
+  }
+}
