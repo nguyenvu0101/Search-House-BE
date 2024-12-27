@@ -25,6 +25,8 @@ public class UpdateMotelRequest : IRequest<Result<Guid>>
     public List<UpdateImageHouseRequest>? ImageHouses { get; set; }
     public List<UpdateFeatureHouseRequest>? FeatureHouseRequests { get; set; }
     public string? Features { get; set; }
+    public string? Status  { get; set; }
+
 }
 
 public class UpdateMotelRequestValidator : CustomValidator<UpdateMotelRequest>
@@ -70,7 +72,8 @@ public class UpdateMotelRequestHandler : IRequestHandler<UpdateMotelRequest, Res
             request.BathroomCount,
             request.Lat,
             request.Lng,
-            request.Features);
+            request.Features,
+            request.Status);
 
         await _repository.UpdateAsync(item, cancellationToken);
         if (request.ImageHouses != null && request.ImageHouses.Count > 0)

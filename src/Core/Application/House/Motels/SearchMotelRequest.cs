@@ -21,7 +21,7 @@ public class MotelsBySearchRequestSpec : EntitiesByPaginationFilterSpec<Motel, M
         : base(request)
     {
         Query.OrderBy(c => c.Address, !request.HasOrderBy())
-             .Where(c => c.Status == request.Status, !string.IsNullOrEmpty(request.Status))
+             .Where(c => request.Status.Contains(c.Status), !string.IsNullOrEmpty(request.Status))
              .Where(c => c.ProvinceId == request.ProvinceId, request.ProvinceId.HasValue)
              .Where(c => c.DistrictId == request.DistrictId, request.DistrictId.HasValue)
              .Where(c => c.IsVip == request.IsVip, request.IsVip.HasValue);

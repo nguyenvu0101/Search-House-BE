@@ -70,7 +70,8 @@ public class Motel : AuditableEntity, IAggregateRoot
         int? bathroomCount,
         decimal? lat,
         decimal? lng,
-        string? features)
+        string? features,
+        string? status)
     {
         Address = address ?? Address;
         Type = type ?? Type;
@@ -84,6 +85,7 @@ public class Motel : AuditableEntity, IAggregateRoot
         Lat = lat ?? Lat;
         Lng = lng ?? Lng;
         Features = features ?? Features;
+        Status = status ?? Status;
 
         return this;
     }
